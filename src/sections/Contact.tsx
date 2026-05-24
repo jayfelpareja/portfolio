@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
     setStatus('sending');
 
     const payload = {
-      access_key: "3c12a318-3469-45c6-8b11-1a3245411faa",
+      access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
       name: formData.name,
       email: formData.email,
       message: formData.message,
@@ -252,7 +252,7 @@ export const Contact: React.FC = () => {
                     <div className="pt-2 flex justify-start overflow-hidden">
                       <HCaptcha
                         ref={captchaRef}
-                        sitekey="f41a92be-4bce-4d50-9006-5e16ab2c6604" // Swap out with your real hCaptcha sitekey
+                        sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY || ""}    // Swap out with your real hCaptcha sitekey
                         onVerify={handleVerificationSuccess}
                         onExpire={handleVerificationExpire}
                         theme="light" // Can switch conditionally to "dark" based on dark mode states
