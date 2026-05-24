@@ -253,11 +253,10 @@ export const Contact: React.FC = () => {
                       <HCaptcha
 
                         ref={captchaRef}
-
-                        sitekey="f41a92be-4bce-4d50-9006-5e16ab2c6604" // Swap out with your real hCaptcha sitekey
+                        sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY || ""}
                         onVerify={handleVerificationSuccess}
                         onExpire={handleVerificationExpire}
-                        theme="light" // Can switch conditionally to "dark" based on dark mode states
+                        theme="light"
                       />
                     </div>
 
